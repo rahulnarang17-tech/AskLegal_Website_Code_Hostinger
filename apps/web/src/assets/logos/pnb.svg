@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 70" width="250" height="70">
+  <circle cx="35" cy="35" r="18" fill="none" stroke="#4B5563" stroke-width="8" />
+  <path d="M35 17 v18 h18" fill="none" stroke="#4B5563" stroke-width="6" />
+  <text x="65" y="45" font-family="Arial, sans-serif" font-weight="900" font-size="28" fill="#4B5563">PNB</text>
+</svg>

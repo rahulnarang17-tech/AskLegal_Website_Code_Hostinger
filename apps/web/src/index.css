@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 48% 10%;
+    
+    /* Deep Navy: #1a2a4a -> HSL: 220, 48%, 20% */
+    --primary: 220 48% 20%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Muted Gold: #c9a961 -> HSL: 41, 48%, 58% */
+    --secondary: 41 48% 58%;
+    --secondary-foreground: 220 48% 10%;
+    
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 10% 40%;
+    
+    --accent: 41 48% 58%;
+    --accent-foreground: 220 48% 10%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 220 48% 20%;
+    
+    --radius: 0.75rem;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 224 48% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 48% 10%;
+  }
+
+  .dark {
+    --background: 224 48% 10%;
+    --foreground: 0 0% 98%;
+    
+    --primary: 220 48% 20%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 41 48% 58%;
+    --secondary-foreground: 220 48% 10%;
+    
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 10% 70%;
+    
+    --accent: 41 48% 58%;
+    --accent-foreground: 220 48% 10%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 41 48% 58%;
+    
+    --card: 224 48% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 224 48% 12%;
+    --popover-foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+    /* Ensure hardware acceleration for smooth scrolling */
+    will-change: transform;
+  }
+  
+  .marquee-container:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  /* Text wrapping utilities for better typography */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Service card title styling */
+  .service-card-title {
+    @apply text-xl font-semibold mb-3 text-balance leading-snug;
+  }
+}
